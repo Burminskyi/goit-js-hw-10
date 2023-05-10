@@ -64,7 +64,7 @@ function renderCountryCard(countries) {
               <li><p><b>Capital: </b>${country.capital}</p></li>
             <li><p><b>Population: </b>${country.population}</p></li>
               <li><p><b>Languages: </b>${Object.values(country.languages).join(
-                ','
+                ', '
               )}</p></li>
               </ul>`;
     })
