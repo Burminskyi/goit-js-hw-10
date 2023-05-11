@@ -23,7 +23,11 @@ function onInput(e) {
   fetchCountries(inputValue)
     .then(data => handleSearchResult(data))
     .catch(error => {
-      Notiflix.Notify.failure('Oops, there is no country with that name');
+      refs.countryList.innerHTML = '';
+      refs.countryInfo.innerHTML = '';
+      if ((error.status = '404')) {
+        Notiflix.Notify.failure('Oops, there is no country with that name');
+      } else Notiflix.Notify.failure(error.message);
     });
 }
 
